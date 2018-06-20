@@ -5,14 +5,17 @@ using UnityEngine.Networking;
 
 public class Bullet : NetworkBehaviour {
 
-    public float BlastRadius = 2f;
+    public float BlastRadius = 0.5f;
 
     [SyncVar]
     public GameObject PlayerFrom;
 
 	// Use this for initialization
 	void Start () {
-		
+		if (isServer)
+        {
+            StartCoroutine("WaitAndDestroy");
+        }
 	}
 	
 	// Update is called once per frame
@@ -34,5 +37,11 @@ public class Bullet : NetworkBehaviour {
                 NetworkServer.Destroy(this.gameObject);
             }
         }
+    }
+
+    IEnumerator WaitAndDestroy()
+    {
+        yield return new WaitForSeconds(5f);
+        NetworkServer.Destroy(this.gameObject);
     }
 }

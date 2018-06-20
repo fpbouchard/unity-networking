@@ -329,8 +329,27 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1202049049168366, guid: 26a4a78c5d9a14d869bab198eb3990dc, type: 2}
+      propertyPath: m_Name
+      value: Static Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 212427642891621200, guid: 26a4a78c5d9a14d869bab198eb3990dc,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212427642891621200, guid: 26a4a78c5d9a14d869bab198eb3990dc,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.7503865
+      objectReference: {fileID: 0}
+    - target: {fileID: 212427642891621200, guid: 26a4a78c5d9a14d869bab198eb3990dc,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 114847827810561702, guid: 26a4a78c5d9a14d869bab198eb3990dc, type: 2}
+    - {fileID: 114230080444667532, guid: 26a4a78c5d9a14d869bab198eb3990dc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 26a4a78c5d9a14d869bab198eb3990dc, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1027396831
