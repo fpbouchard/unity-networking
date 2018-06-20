@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class Bullet : NetworkBehaviour {
 
     public float BlastRadius = 0.5f;
+    public float Damage = 10f;
 
     [SyncVar]
     public GameObject PlayerFrom;
@@ -25,6 +26,8 @@ public class Bullet : NetworkBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // bail out if self
+
         if (isServer) {
             if (other.gameObject == PlayerFrom) {
                 Debug.Log("Hit self!");
@@ -33,10 +36,22 @@ public class Bullet : NetworkBehaviour {
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, BlastRadius);
                 foreach (Collider2D col in colliders) {
                     Debug.Log("Blasting " + col.gameObject.name);
+                    Player player = col.gameObject.GetComponent<Player>();
+
+                    if (player) {
+                        player.CmdHit(gameObject.transform.position, Damage);
+                    }
                 }
+                CmdExplode();
                 NetworkServer.Destroy(this.gameObject);
             }
         }
+    }
+
+    [Command]
+    public void CmdExplode()
+    {
+
     }
 
     IEnumerator WaitAndDestroy()

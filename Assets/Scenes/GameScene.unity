@@ -125,7 +125,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -300,11 +300,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4647645663573788, guid: 26a4a78c5d9a14d869bab198eb3990dc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.53
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4647645663573788, guid: 26a4a78c5d9a14d869bab198eb3990dc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.42
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4647645663573788, guid: 26a4a78c5d9a14d869bab198eb3990dc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -347,6 +347,31 @@ Prefab:
     - target: {fileID: 212427642891621200, guid: 26a4a78c5d9a14d869bab198eb3990dc,
         type: 2}
       propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61149666589976060, guid: 26a4a78c5d9a14d869bab198eb3990dc,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 61149666589976060, guid: 26a4a78c5d9a14d869bab198eb3990dc,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 61149666589976060, guid: 26a4a78c5d9a14d869bab198eb3990dc,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 61149666589976060, guid: 26a4a78c5d9a14d869bab198eb3990dc,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61149666589976060, guid: 26a4a78c5d9a14d869bab198eb3990dc,
+        type: 2}
+      propertyPath: m_Size.y
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -497,7 +522,7 @@ GameObject:
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
-  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

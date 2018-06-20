@@ -73,22 +73,22 @@ BoxCollider2D:
   m_GameObject: {fileID: 1202049049168366}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 8be6341e1ce3f4cec9902bc34f72d20a, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.62500954, y: 0.6252203}
+  m_Offset: {x: 0.5, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
-    oldSize: {x: 1.25, y: 1.25}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2326965, y: 1.2320957}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &114230080444667532
 MonoBehaviour:
@@ -104,6 +104,8 @@ MonoBehaviour:
   Speed: 10
   JumpForce: 15
   FireSpeed: 20
+  MaxHP: 100
+  HP: 0
   BulletPrefab: {fileID: 1427322122357594, guid: 81bd80dd9784d472582ddc9b77639b89,
     type: 2}
 --- !u!114 &114400444794424334

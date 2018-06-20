@@ -10,6 +10,11 @@ public class Player : NetworkBehaviour
     public float JumpForce = 10f;
     public float FireSpeed = 20f;
 
+    public float MaxHP = 100f;
+
+    [SyncVar (hook="OnHPChange")]
+    public float HP;
+
     public GameObject BulletPrefab;
 
     private Rigidbody2D rb;
@@ -17,6 +22,7 @@ public class Player : NetworkBehaviour
     // Use this for initialization
     void Start()
     {
+        HP = MaxHP;
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
@@ -40,8 +46,14 @@ public class Player : NetworkBehaviour
         }
     }
 
+    public void OnHPChange(float newHP)
+    {
+        HP = newHP;
+        gameObject.transform.localScale = Vector3.one * (HP / MaxHP);
+    }
+
     [Command]
-    void CmdFire(Vector3 mousePosition)
+    public void CmdFire(Vector3 mousePosition)
     {
         Vector3 center = gameObject.GetComponent<Renderer>().bounds.center;
         GameObject bullet = Instantiate(BulletPrefab, center, Quaternion.identity);
@@ -53,5 +65,11 @@ public class Player : NetworkBehaviour
         bulletRigidbody.velocity = heading.normalized * FireSpeed;
 
         NetworkServer.Spawn(bullet);
+    }
+
+    [Command]
+    public void CmdHit(Vector2 position, float damage)
+    {
+        HP -= damage;
     }
 }
