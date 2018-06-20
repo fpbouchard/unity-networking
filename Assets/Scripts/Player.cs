@@ -35,20 +35,20 @@ public class Player : NetworkBehaviour
 
             if (Input.GetButtonDown("Fire1"))
             {
-                CmdFire();
+                CmdFire(Camera.main.ScreenToWorldPoint(Input.mousePosition));
             }
         }
     }
 
     [Command]
-    void CmdFire()
+    void CmdFire(Vector3 mousePosition)
     {
         Vector3 center = gameObject.GetComponent<Renderer>().bounds.center;
         GameObject bullet = Instantiate(BulletPrefab, center, Quaternion.identity);
 
         bullet.GetComponent<Bullet>().PlayerFrom = gameObject;
 
-        Vector2 heading = Camera.main.ScreenToWorldPoint(Input.mousePosition) - center;
+        Vector2 heading = mousePosition - center;
         Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
         bulletRigidbody.velocity = heading.normalized * FireSpeed;
 

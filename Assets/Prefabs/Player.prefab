@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
-  JumpForce: 10
+  JumpForce: 15
   FireSpeed: 20
   BulletPrefab: {fileID: 1427322122357594, guid: 81bd80dd9784d472582ddc9b77639b89,
     type: 2}
