@@ -8,6 +8,9 @@ public class Player : NetworkBehaviour
 
     public float Speed = 10f;
     public float JumpForce = 10f;
+    public float IdleBounceForce = 7f;
+    public float IdleBounceFrequency = 5f;
+    public float IdleBounceTorque = 100f;
     public float FireSpeed = 20f;
 
     public float MaxHP = 100f;
@@ -24,6 +27,7 @@ public class Player : NetworkBehaviour
     {
         HP = MaxHP;
         rb = gameObject.GetComponent<Rigidbody2D>();
+        StartCoroutine("bounce");
     }
 
     // Update is called once per frame
@@ -42,6 +46,19 @@ public class Player : NetworkBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 CmdFire(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            }
+        }
+    }
+
+    IEnumerator bounce()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(IdleBounceFrequency);
+            if (rb.velocity.y == 0)
+            {
+                rb.AddForce(new Vector2(0, IdleBounceForce), ForceMode2D.Impulse);
+                rb.AddTorque(IdleBounceTorque);
             }
         }
     }
